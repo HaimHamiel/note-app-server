@@ -1,0 +1,4 @@
+NODE_ENV = The environment that the application running on (development or production)
+PORT = Your port(for example: 5000)
+MONGODB_URI = Put here your mongodb uri 
+JWT_SECRET = Put here your secret
