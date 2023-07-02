@@ -1,10 +1,17 @@
+const { env } = require("../config/vars");
+
 const errorHandler = (err, req, res, next) => {
-  const statusCode = res.statusCode ? res.statusCode : 500;
-  res.status(statusCode);
-  res.json({
-    message: err.message,
-    stack: process.env.NODE_ENV === "production" ? null : err.stack,
-  });
+  try {
+    const statusCode = res.statusCode ? res.statusCode : 500;
+    res.status(statusCode);
+    res.json({
+      message: err.message,
+      stack: env === "production" ? null : err.stack,
+    });
+  } catch (error) {
+    console.error(`Error handling request: ${error}`);
+    next(error);
+  }
 };
 
 module.exports = { errorHandler };

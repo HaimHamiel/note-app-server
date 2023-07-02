@@ -7,6 +7,10 @@ const {
 } = require("../controllers/userController");
 const { protect } = require("../middleware/authMiddleware");
 
+const cors = require("cors");
+// enable CORS for all routes in this router
+router.use(cors());
+
 router.post("/", registerUser);
 router.post("/login", loginUser);
 router.get("/me", protect, getMe);
