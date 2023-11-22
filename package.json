@@ -1,12 +1,12 @@
 {
-  "name": "basic-application-server",
+  "name": "note-app-server",
   "version": "1.0.0",
-  "description": "Basic Application Server",
+  "description": "Note App Server",
   "main": "server.js",
   "scripts": {
     "start": "node src/server.js",
     "server": "nodemon src/server.js",
-    "dev": "concurrently \"npm run server\" \"cd ../basic-application && npm start\""
+    "dev": "concurrently \"npm run server\" \"cd ../note-app && npm start\""
   },
   "author": "Haim Hamiel",
   "license": "MIT",
