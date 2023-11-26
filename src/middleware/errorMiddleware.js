@@ -2,7 +2,7 @@ const { env } = require("../config/vars");
 
 const errorHandler = (err, req, res, next) => {
   try {
-    const statusCode = res.statusCode ? res.statusCode : 500;
+    const statusCode = res.statusCode < 400 ?  500 : res.statusCode;
     res.status(statusCode);
     res.json({
       message: err.message,

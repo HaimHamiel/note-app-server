@@ -7,7 +7,6 @@ const {
   addUser,
 } = require("../services/userService");
 
-
 // @desc Register a new user
 // @route /api/users
 // @access Public
@@ -104,6 +103,7 @@ const getMe = asyncHandler(async (req, res) => {
     return res.status(500).json({ message: "Server error." });
   }
 });
+
 //Generate token
 const generateToken = (id) => {
   return jwt.sign({ id }, jwtSecret, {

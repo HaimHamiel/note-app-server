@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.status(200).json({ message: "Welcome to Basic Application" });
+  res.status(200).json({ message: "Welcome to Note App" });
 });
 
 //Routes
